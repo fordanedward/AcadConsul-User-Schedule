@@ -1,0 +1,199 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge"> 
+    <meta name="viewport" 
+          content="width=device-width,  
+                   initial-scale=1.0"> 
+    <title>Academic Consultation</title> 
+    <!-- Linking Poppins font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Apply Poppins font to the entire document */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Use Poppins font for the header specifically */
+        .header p {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Style for the navigation links */
+        .nav-upper-options ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .nav-upper-options li {
+            margin-bottom: 10px;
+        }
+        .nav-upper-options a {
+            text-decoration: none;
+            color: #000;
+            display: flex;
+            align-items: center;
+        }
+        .nav-upper-options a .icon {
+            margin-right: 10px;
+        }
+        /* Increase font size for specific links */
+        .nav-upper-options a.dashboard {
+            font-size: 20px; /* Adjust font size as needed */
+        }
+        .nav-upper-options a.schedule {
+            font-size: 20px; /* Adjust font size as needed */
+        }
+        .nav-upper-options a.profile {
+            font-size: 20px; /* Adjust font size as needed */
+        }
+        /* Calendar styles */
+        .wrapper {
+            width: 100%;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            padding: 20px;
+        }
+        .wrapper header {
+            display: flex;
+            align-items: center;
+            padding: 25px 30px 10px;
+            justify-content: space-between;
+        }
+        header .icons {
+            display: flex;
+        }
+        header .icons span {
+            height: 38px;
+            width: 38px;
+            margin: 0 1px;
+            cursor: pointer;
+            color: #878787;
+            text-align: center;
+            line-height: 38px;
+            font-size: 1.9rem;
+            user-select: none;
+            border-radius: 50%;
+        }
+        .icons span:last-child {
+            margin-right: -10px;
+        }
+        header .icons span:hover {
+            background: #f2f2f2;
+        }
+        header .current-date {
+            font-size: 1.45rem;
+            font-weight: 500;
+        }
+        .calendar ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            text-align: center;
+        }
+        .calendar .days {
+            margin-bottom: 20px;
+        }
+        .calendar li {
+            color: #333;
+            width: calc(100% / 7);
+            font-size: 1.07rem;
+        }
+        .calendar .weeks li {
+            font-weight: 500;
+            cursor: default;
+        }
+        .calendar .days li {
+            z-index: 1;
+            cursor: pointer;
+            position: relative;
+            margin-top: 30px;
+        }
+        .days li.inactive {
+            color: #aaa;
+        }
+        .days li.active {
+            color: #fff;
+        }
+        .days li::before {
+            position: absolute;
+            content: "";
+            left: 50%;
+            top: 50%;
+            height: 40px;
+            width: 40px;
+            z-index: -1;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .days li.active::before {
+            background: #9B59B6;
+        }
+        .days li:not(.active):hover::before {
+            background: #f2f2f2;
+        }
+    </style>
+    <link rel="stylesheet" href="dashboard.css"> 
+</head> 
+  
+<body> 
+    <script src="script.js" defer></script>
+    <!-- para sa header lang  -->
+    <header>  
+        <div class="logosec">               
+            <div class="header"> 
+                <p>Academic Consultation</p>               
+            </div>
+        </div>
+    </header>  
+    <div class="main-container"> 
+        <div class="navcontainer"> 
+            <nav class="nav"> 
+                <div class="nav-upper-options"> 
+                    <ul>
+                        <li><a href="dashboard.html" class="dashboard"><i class="fas fa-tachometer-alt icon"></i>Dashboard</a></li>
+                        <li><a href="schedule.html" class="schedule"><i class="fas fa-calendar-alt icon"></i>Schedule</a></li>
+                        <li><a href="profile.html" class="profile"><i class="fas fa-user icon"></i>Profile</a></li>
+                    </ul>
+                </div> 
+            </nav> 
+        </div> 
+        <div class="main"> 
+            <!-- Calendar code goes here -->
+            <div class="wrapper">
+                <header>
+                    <p class="current-date"></p>
+                    <div class="icons">
+                        <span id="prev" class="material-symbols-rounded">chevron_left</span>
+                        <span id="next" class="material-symbols-rounded">chevron_right</span>
+                    </div>
+                </header>
+                <div class="calendar">
+                    <ul class="weeks">
+                        <li>Sun</li>
+                        <li>Mon</li>
+                        <li>Tue</li>
+                        <li>Wed</li>
+                        <li>Thu</li>
+                        <li>Fri</li>
+                        <li>Sat</li>
+                    </ul>
+                    <ul class="days"></ul>
+                </div>
+            </div>
+        </div> 
+    </div> 
+
+    <!-- Logout link -->
+    <div class="logout">
+        <a href="#" class="logout-link">Logout</a>
+    </div>
+  
+</body> 
+</html>
