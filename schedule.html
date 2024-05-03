@@ -3,11 +3,8 @@
   
 <head> 
     <meta charset="UTF-8"> 
-    <meta http-equiv="X-UA-Compatible"
-          content="IE=edge"> 
-    <meta name="viewport" 
-          content="width=device-width,  
-                   initial-scale=1.0"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Academic Consultation</title> 
     <!-- Linking Poppins font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
@@ -63,8 +60,12 @@
         }
         .nav-upper-options a.logout-link {
             font-size: 17px; /* Adjust font size as needed */
-            margin-left: 85px;
+            margin-left: 45px;
             margin-top: 500px;
+        }
+        /* Hover effect */
+        .nav-upper-options a:hover {
+            transform: translateX(5px); /* Adjust the distance */
         }
         /* Calendar styles */
         .wrapper {
@@ -118,23 +119,24 @@
         .calendar li {
             color: #000000;
             width: calc(100% / 7);
-            font-size: 1.07rem;
+            font-size: 1.05rem;
         }
         .calendar .weeks li {
-            font-weight: 500;
+            font-weight: 400;
             cursor: default;
         }
         .calendar .days li {
             z-index: 1;
             cursor: pointer;
             position: relative;
-            margin-top: 30px;
+            margin-top: 23px;
         }
         .days li.inactive {
             color: #aaa;
         }
         .days li.active {
             color: #fff;
+            font-weight: 400;
         }
         .days li::before {
             position: absolute;
@@ -148,7 +150,7 @@
             transform: translate(-50%, -50%);
         }
         .days li.active::before {
-            background: #f07e12;
+            background: #48bd69;
         }
         .days li:not(.active):hover::before {
             background: #f2f2f2;
@@ -156,15 +158,16 @@
 
         /* Adjust margin for the logo */
         .header img {
-        margin-right: 10px; /* Adjust as needed */
-        margin-top: -70px; /* Adjust as needed */
+            margin-right: 10px; /* Adjust as needed */
+            margin-top: -153px; /* Adjust as needed */
         }
 
         /* Adjust margin for the header text */
         .header h2,
         .header p {
-        margin-left: 90px; /* Adjust as needed */
-        margin-top: auto; /* Adjust as needed */
+            margin-left: 97px; /* Adjust as needed */
+            margin-bottom: 5px; /* Adjust as needed */
+            margin-top: -5px;
         }
 
     </style>
@@ -177,10 +180,15 @@
     <header>  
         <div class="logosec">               
             <div class="header"> 
-                <img src="AConsultation APPROVED.png" alt="Logo" height="90px"> <!-- Add your image here -->
+
                 <h2>Academic Consultation</h2>        
                 <p>Appointment Queueing System</p>
-                <img src="AConsultation APPROVED.png" alt="Logo" height="88px"> <!-- Add your image here -->
+                <img src="AConsultation APPROVED.png" alt="Logo" height="86px"> <!-- Add your image here -->
+
+                <h4>Rochelyn Fatima C. Manada</h4>
+                ​<h3 class="status">STATUS:SCHEDULED</h3>
+
+                <img style="width: 60px; height: auto; margin-left: 1750px; margin-bottom: -18px; margin-top: -150px;" src="faith.jpeg" alt="logo">
             </div>
         </div>
     </header>  
@@ -194,7 +202,7 @@
                         <li><a href="form.html" class="form"><i class="fas fa-pen icon"></i>Form</a></li>
                         <li><a href="profile.html" class="profile"><i class="fas fa-user icon"></i>Profile</a></li>
                         <!-- Logout icon -->
-                        <li><a href="#" class="logout-link"><i class="fas fa-sign-out-alt icon"></i></a></li>
+                        <li><a href="logout.html" class="logout-link"><i class="fas fa-sign-out-alt icon"></i>Logout</a></li>
                     </ul>
                 </div> 
             </nav> 
@@ -202,33 +210,32 @@
         <div class="main"> 
             <h1> Schedule </h1>
             <p> *Proceed to Form once you're done checking the schedule.* </p>
-            <img src="status-bar.png" alt="Status" height="170px"> <!-- Add your image here -->
+            <img src="status-bar.png" alt="Status" height="150px"> <!-- Add your image here -->
             <!-- Calendar code goes here -->
             <div class="wrapper">
                 <div class="content-header">
                     <h2 class="current-date"></h2>
+                    <div class="icons">
+                        <span id="prev"><i class="fas fa-chevron-left"></i></span>
+                        <span id="next"><i class="fas fa-chevron-right"></i></span>
+                    </div>
                 </div>
                 
                 <div class="calendar">
                     <ul class="weeks">
-                        <li>Sun</li>
-                        <li>Mon</li>
-                        <li>Tue</li>
-                        <li>Wed</li>
-                        <li>Thu</li>
-                        <li>Fri</li>
-                        <li>Sat</li>
+                        <li>SUN</li>
+                        <li>MON</li>
+                        <li>TUE</li>
+                        <li>WED</li>
+                        <li>THU</li>
+                        <li>FRI</li>
+                        <li>SAT</li>
                     </ul>
                     <ul class="days"></ul>
                 </div>
             </div>
         </div> 
     </div> 
-
-    <!-- Logout link -->
-    <div class="logout">
-        <a href="#" class="logout-link">Logout</a>
-    </div>
   
 </body> 
 </html>
